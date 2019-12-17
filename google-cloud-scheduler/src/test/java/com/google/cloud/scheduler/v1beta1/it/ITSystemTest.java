@@ -81,9 +81,7 @@ public class ITSystemTest {
     client.close();
   }
 
-  @Test
-  public void getJobTest() {
-    Job job = client.getJob(JOB_NAME);
+  private static void checkJob(Job job) {
     assertEquals(JOB_NAME, job.getName());
     assertEquals(Job.State.ENABLED, job.getState());
     assertEquals(SCHEDULE, job.getSchedule());
@@ -92,15 +90,17 @@ public class ITSystemTest {
   }
 
   @Test
+  public void getJobTest() {
+    Job job = client.getJob(JOB_NAME);
+    checkJob(job);
+  }
+
+  @Test
   public void listJobsTest() {
     List<Job> jobs = Lists.newArrayList(client.listJobs(PARENT).iterateAll());
     for (Job job : jobs) {
       if (JOB_NAME.equals(job.getName())) {
-        assertEquals(JOB_NAME, job.getName());
-        assertEquals(SCHEDULE, job.getSchedule());
-        assertEquals(TIME_ZONE, job.getTimeZone());
-        assertEquals(PUB_SUB_TARGET, job.getPubsubTarget());
-        assertEquals(Job.State.ENABLED, job.getState());
+        checkJob(job);
       }
     }
   }
@@ -116,11 +116,7 @@ public class ITSystemTest {
 
     /** resume Job */
     Job resumeJob = client.resumeJob(JOB_NAME);
-    assertEquals(JOB_NAME, resumeJob.getName());
-    assertEquals(Job.State.ENABLED, resumeJob.getState());
-    assertEquals(SCHEDULE, resumeJob.getSchedule());
-    assertEquals(TIME_ZONE, resumeJob.getTimeZone());
-    assertEquals(PUB_SUB_TARGET, resumeJob.getPubsubTarget());
+    checkJob(resumeJob);
   }
 
   @Test
@@ -146,10 +142,6 @@ public class ITSystemTest {
   @Test
   public void runJobTest() {
     Job job = client.runJob(JOB_NAME);
-    assertEquals(JOB_NAME, job.getName());
-    assertEquals(Job.State.ENABLED, job.getState());
-    assertEquals(SCHEDULE, job.getSchedule());
-    assertEquals(TIME_ZONE, job.getTimeZone());
-    assertEquals(PUB_SUB_TARGET, job.getPubsubTarget());
+    checkJob(job);
   }
 }
