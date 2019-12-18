@@ -15,8 +15,9 @@
  */
 package com.google.cloud.scheduler.v1beta1.it;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertEquals;
 
+import com.google.api.core.ApiFuture;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.scheduler.v1beta1.CloudSchedulerClient;
@@ -24,6 +25,7 @@ import com.google.cloud.scheduler.v1beta1.Job;
 import com.google.cloud.scheduler.v1beta1.JobName;
 import com.google.cloud.scheduler.v1beta1.LocationName;
 import com.google.cloud.scheduler.v1beta1.PubsubTarget;
+import com.google.cloud.scheduler.v1beta1.RunJobRequest;
 import com.google.cloud.scheduler.v1beta1.UpdateJobRequest;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
@@ -56,9 +58,9 @@ public class ITSystemTest {
   private static final LocationName PARENT = LocationName.of(PROJECT, LOCATION);
 
   @BeforeClass
-  public static void beforeClass() throws Exception {
+  public static void setUp() throws Exception {
 
-    /** The job will be delivered by publishing a message to the given Pub/Sub topic. */
+    /* The job will be delivered by publishing a message to the given Pub/Sub topic. */
     publisherClient = TopicAdminClient.create();
     publisherClient.createTopic(TOPIC_NAME);
 
@@ -74,14 +76,14 @@ public class ITSystemTest {
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void tearDown() {
     client.deleteJob(JOB_NAME);
     publisherClient.deleteTopic(TOPIC_NAME);
     publisherClient.close();
     client.close();
   }
 
-  private static void checkJob(Job job) {
+  private static void assertJobDetails(Job job) {
     assertEquals(JOB_NAME, job.getName());
     assertEquals(Job.State.ENABLED, job.getState());
     assertEquals(SCHEDULE, job.getSchedule());
@@ -92,7 +94,7 @@ public class ITSystemTest {
   @Test
   public void getJobTest() {
     Job job = client.getJob(JOB_NAME);
-    checkJob(job);
+    assertJobDetails(job);
   }
 
   @Test
@@ -100,29 +102,29 @@ public class ITSystemTest {
     List<Job> jobs = Lists.newArrayList(client.listJobs(PARENT).iterateAll());
     for (Job job : jobs) {
       if (JOB_NAME.equals(job.getName())) {
-        checkJob(job);
+        assertJobDetails(job);
       }
     }
   }
 
   @Test
   public void pauseAndResumeJobTest() {
-    /** pause Job */
+    /* pause Job */
     Job pauseJob = client.pauseJob(JOB_NAME);
     assertEquals(Job.State.PAUSED, pauseJob.getState());
     assertEquals(SCHEDULE, pauseJob.getSchedule());
     assertEquals(TIME_ZONE, pauseJob.getTimeZone());
     assertEquals(PUB_SUB_TARGET, pauseJob.getPubsubTarget());
 
-    /** resume Job */
+    /* resume Job */
     Job resumeJob = client.resumeJob(JOB_NAME);
-    checkJob(resumeJob);
+    assertJobDetails(resumeJob);
   }
 
   @Test
-  public void updateJobTest() throws Exception {
+  public void updateJobTest() {
     String timeZone = "PST";
-    String schedule = "25 8 * * * ";
+    String schedule = "25 8 * * *";
     Job updateJob =
         Job.newBuilder()
             .setName(JOB_NAME)
@@ -140,8 +142,14 @@ public class ITSystemTest {
   }
 
   @Test
-  public void runJobTest() {
-    Job job = client.runJob(JOB_NAME);
-    checkJob(job);
+  public void runJobTest() throws Exception {
+    RunJobRequest jobRequest = RunJobRequest.newBuilder().setName(JOB_NAME).build();
+    ApiFuture<Job> job = client.runJobCallable().futureCall(jobRequest);
+    while (true) {
+      if (job.isDone()) {
+        assertJobDetails(job.get());
+        break;
+      }
+    }
   }
 }
