@@ -169,6 +169,24 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client</artifactId>
+        <version>1.33.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-iam-v1</artifactId>
+        <version>0.13.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-pubsub</artifactId>
+        <version>1.102.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
         <version>${gax.version}</version>
