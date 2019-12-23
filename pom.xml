@@ -175,6 +175,12 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-pubsub-v1</artifactId>
+        <version>1.84.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-grpc</artifactId>
         <version>${gax.version}</version>
