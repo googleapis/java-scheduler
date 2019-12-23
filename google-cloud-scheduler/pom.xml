@@ -89,16 +89,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-iam-v1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.http-client</groupId>
-      <artifactId>google-http-client</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
       <scope>test</scope>
