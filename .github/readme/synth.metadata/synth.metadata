@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-scheduler.git",
+        "sha": "afebc2951d9a442919532215792e3f8f3f560995"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "477764cc4ee6db346d3febef2bb1ea0abf27de52"
+      }
+    }
+  ]
+}
