@@ -22,7 +22,14 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * The Cloud Scheduler API allows external entities to reliably
+ * schedule asynchronous jobs.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/scheduler/v1beta1/cloudscheduler.proto")
@@ -428,10 +435,23 @@ public final class CloudSchedulerGrpc {
     return CloudSchedulerFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Scheduler API allows external entities to reliably
+   * schedule asynchronous jobs.
+   * </pre>
+   */
   public abstract static class CloudSchedulerImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists jobs.
+     * </pre>
+     */
     public void listJobs(
         com.google.cloud.scheduler.v1beta1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.ListJobsResponse>
@@ -439,49 +459,108 @@ public final class CloudSchedulerGrpc {
       asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a job.
+     * </pre>
+     */
     public void getJob(
         com.google.cloud.scheduler.v1beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a job.
+     * </pre>
+     */
     public void createJob(
         com.google.cloud.scheduler.v1beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a job.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is returned. If the job does
+     * not exist, `NOT_FOUND` is returned.
+     * If UpdateJob does not successfully return, it is possible for the
+     * job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED] state. A job in this state may
+     * not be executed. If this happens, retry the UpdateJob request
+     * until a successful response is received.
+     * </pre>
+     */
     public void updateJob(
         com.google.cloud.scheduler.v1beta1.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a job.
+     * </pre>
+     */
     public void deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a job.
+     * If a job is paused then the system will stop executing the job
+     * until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it
+     * will be set to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]
+     * to be paused.
+     * </pre>
+     */
     public void pauseJob(
         com.google.cloud.scheduler.v1beta1.PauseJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       asyncUnimplementedUnaryCall(getPauseJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Resume a job.
+     * This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+     * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+     * </pre>
+     */
     public void resumeJob(
         com.google.cloud.scheduler.v1beta1.ResumeJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       asyncUnimplementedUnaryCall(getResumeJobMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Forces a job to run now.
+     * When this method is called, Cloud Scheduler will dispatch the job, even
+     * if the job is already running.
+     * </pre>
+     */
     public void runJob(
         com.google.cloud.scheduler.v1beta1.RunJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
@@ -544,7 +623,14 @@ public final class CloudSchedulerGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Scheduler API allows external entities to reliably
+   * schedule asynchronous jobs.
+   * </pre>
+   */
   public static final class CloudSchedulerStub
       extends io.grpc.stub.AbstractAsyncStub<CloudSchedulerStub> {
     private CloudSchedulerStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -556,7 +642,13 @@ public final class CloudSchedulerGrpc {
       return new CloudSchedulerStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists jobs.
+     * </pre>
+     */
     public void listJobs(
         com.google.cloud.scheduler.v1beta1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.ListJobsResponse>
@@ -565,7 +657,13 @@ public final class CloudSchedulerGrpc {
           getChannel().newCall(getListJobsMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a job.
+     * </pre>
+     */
     public void getJob(
         com.google.cloud.scheduler.v1beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
@@ -573,7 +671,13 @@ public final class CloudSchedulerGrpc {
           getChannel().newCall(getGetJobMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a job.
+     * </pre>
+     */
     public void createJob(
         com.google.cloud.scheduler.v1beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
@@ -581,7 +685,19 @@ public final class CloudSchedulerGrpc {
           getChannel().newCall(getCreateJobMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a job.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is returned. If the job does
+     * not exist, `NOT_FOUND` is returned.
+     * If UpdateJob does not successfully return, it is possible for the
+     * job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED] state. A job in this state may
+     * not be executed. If this happens, retry the UpdateJob request
+     * until a successful response is received.
+     * </pre>
+     */
     public void updateJob(
         com.google.cloud.scheduler.v1beta1.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
@@ -589,7 +705,13 @@ public final class CloudSchedulerGrpc {
           getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a job.
+     * </pre>
+     */
     public void deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -597,7 +719,18 @@ public final class CloudSchedulerGrpc {
           getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a job.
+     * If a job is paused then the system will stop executing the job
+     * until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it
+     * will be set to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]
+     * to be paused.
+     * </pre>
+     */
     public void pauseJob(
         com.google.cloud.scheduler.v1beta1.PauseJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
@@ -605,7 +738,17 @@ public final class CloudSchedulerGrpc {
           getChannel().newCall(getPauseJobMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Resume a job.
+     * This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+     * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+     * </pre>
+     */
     public void resumeJob(
         com.google.cloud.scheduler.v1beta1.ResumeJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
@@ -613,7 +756,15 @@ public final class CloudSchedulerGrpc {
           getChannel().newCall(getResumeJobMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Forces a job to run now.
+     * When this method is called, Cloud Scheduler will dispatch the job, even
+     * if the job is already running.
+     * </pre>
+     */
     public void runJob(
         com.google.cloud.scheduler.v1beta1.RunJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
@@ -622,7 +773,14 @@ public final class CloudSchedulerGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Scheduler API allows external entities to reliably
+   * schedule asynchronous jobs.
+   * </pre>
+   */
   public static final class CloudSchedulerBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<CloudSchedulerBlockingStub> {
     private CloudSchedulerBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -635,56 +793,128 @@ public final class CloudSchedulerGrpc {
       return new CloudSchedulerBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists jobs.
+     * </pre>
+     */
     public com.google.cloud.scheduler.v1beta1.ListJobsResponse listJobs(
         com.google.cloud.scheduler.v1beta1.ListJobsRequest request) {
       return blockingUnaryCall(getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a job.
+     * </pre>
+     */
     public com.google.cloud.scheduler.v1beta1.Job getJob(
         com.google.cloud.scheduler.v1beta1.GetJobRequest request) {
       return blockingUnaryCall(getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a job.
+     * </pre>
+     */
     public com.google.cloud.scheduler.v1beta1.Job createJob(
         com.google.cloud.scheduler.v1beta1.CreateJobRequest request) {
       return blockingUnaryCall(getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a job.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is returned. If the job does
+     * not exist, `NOT_FOUND` is returned.
+     * If UpdateJob does not successfully return, it is possible for the
+     * job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED] state. A job in this state may
+     * not be executed. If this happens, retry the UpdateJob request
+     * until a successful response is received.
+     * </pre>
+     */
     public com.google.cloud.scheduler.v1beta1.Job updateJob(
         com.google.cloud.scheduler.v1beta1.UpdateJobRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a job.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a job.
+     * If a job is paused then the system will stop executing the job
+     * until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it
+     * will be set to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]
+     * to be paused.
+     * </pre>
+     */
     public com.google.cloud.scheduler.v1beta1.Job pauseJob(
         com.google.cloud.scheduler.v1beta1.PauseJobRequest request) {
       return blockingUnaryCall(getChannel(), getPauseJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Resume a job.
+     * This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+     * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+     * </pre>
+     */
     public com.google.cloud.scheduler.v1beta1.Job resumeJob(
         com.google.cloud.scheduler.v1beta1.ResumeJobRequest request) {
       return blockingUnaryCall(getChannel(), getResumeJobMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Forces a job to run now.
+     * When this method is called, Cloud Scheduler will dispatch the job, even
+     * if the job is already running.
+     * </pre>
+     */
     public com.google.cloud.scheduler.v1beta1.Job runJob(
         com.google.cloud.scheduler.v1beta1.RunJobRequest request) {
       return blockingUnaryCall(getChannel(), getRunJobMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Scheduler API allows external entities to reliably
+   * schedule asynchronous jobs.
+   * </pre>
+   */
   public static final class CloudSchedulerFutureStub
       extends io.grpc.stub.AbstractFutureStub<CloudSchedulerFutureStub> {
     private CloudSchedulerFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -697,55 +927,120 @@ public final class CloudSchedulerGrpc {
       return new CloudSchedulerFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists jobs.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.ListJobsResponse>
         listJobs(com.google.cloud.scheduler.v1beta1.ListJobsRequest request) {
       return futureUnaryCall(getChannel().newCall(getListJobsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Gets a job.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         getJob(com.google.cloud.scheduler.v1beta1.GetJobRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a job.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         createJob(com.google.cloud.scheduler.v1beta1.CreateJobRequest request) {
       return futureUnaryCall(getChannel().newCall(getCreateJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a job.
+     * If successful, the updated [Job][google.cloud.scheduler.v1beta1.Job] is returned. If the job does
+     * not exist, `NOT_FOUND` is returned.
+     * If UpdateJob does not successfully return, it is possible for the
+     * job to be in an [Job.State.UPDATE_FAILED][google.cloud.scheduler.v1beta1.Job.State.UPDATE_FAILED] state. A job in this state may
+     * not be executed. If this happens, retry the UpdateJob request
+     * until a successful response is received.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         updateJob(com.google.cloud.scheduler.v1beta1.UpdateJobRequest request) {
       return futureUnaryCall(getChannel().newCall(getUpdateJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a job.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request) {
       return futureUnaryCall(getChannel().newCall(getDeleteJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a job.
+     * If a job is paused then the system will stop executing the job
+     * until it is re-enabled via [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The
+     * state of the job is stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it
+     * will be set to [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]
+     * to be paused.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         pauseJob(com.google.cloud.scheduler.v1beta1.PauseJobRequest request) {
       return futureUnaryCall(getChannel().newCall(getPauseJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Resume a job.
+     * This method reenables a job after it has been [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The
+     * state of a job is stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+     * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job must be in
+     * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         resumeJob(com.google.cloud.scheduler.v1beta1.ResumeJobRequest request) {
       return futureUnaryCall(getChannel().newCall(getResumeJobMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Forces a job to run now.
+     * When this method is called, Cloud Scheduler will dispatch the job, even
+     * if the job is already running.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.scheduler.v1beta1.Job>
         runJob(com.google.cloud.scheduler.v1beta1.RunJobRequest request) {
