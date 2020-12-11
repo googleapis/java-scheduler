@@ -327,7 +327,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *     must be specified.
    *     <p>Output only fields cannot be modified using UpdateJob. Any value specified for an output
    *     only field will be ignored.
-   * @param update_mask A mask used to specify which fields of the job are being updated.
+   * @param updateMask A mask used to specify which fields of the job are being updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job updateJob(Job job, FieldMask updateMask) {
