@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
-        "internalRef": "346372957"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
@@ -172,6 +172,7 @@
     "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/RunJobRequestOrBuilder.java",
     "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/SchedulerProto.java",
     "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/TargetProto.java",
+    "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/TopicName.java",
     "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/UpdateJobRequest.java",
     "proto-google-cloud-scheduler-v1/src/main/java/com/google/cloud/scheduler/v1/UpdateJobRequestOrBuilder.java",
     "proto-google-cloud-scheduler-v1/src/main/proto/google/cloud/scheduler/v1/cloudscheduler.proto",
@@ -215,6 +216,7 @@
     "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/RunJobRequestOrBuilder.java",
     "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/SchedulerProto.java",
     "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/TargetProto.java",
+    "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/TopicName.java",
     "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/UpdateJobRequest.java",
     "proto-google-cloud-scheduler-v1beta1/src/main/java/com/google/cloud/scheduler/v1beta1/UpdateJobRequestOrBuilder.java",
     "proto-google-cloud-scheduler-v1beta1/src/main/proto/google/cloud/scheduler/v1beta1/cloudscheduler.proto",
