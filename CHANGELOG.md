@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.0](https://www.github.com/googleapis/java-scheduler/compare/v1.24.6...v1.25.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#526](https://www.github.com/googleapis/java-scheduler/issues/526)) ([2693aa3](https://www.github.com/googleapis/java-scheduler/commit/2693aa33851e6a1a8b9e06e50e2025075402ccd3))
+
 ### [1.24.6](https://www.github.com/googleapis/java-scheduler/compare/v1.24.5...v1.24.6) (2021-07-07)
 
 
