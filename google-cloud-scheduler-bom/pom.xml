@@ -57,7 +57,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-scheduler-v1beta1</artifactId>
-        <version>0.86.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
+        <version>2.1.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -67,7 +67,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-scheduler-v1beta1</artifactId>
-        <version>0.86.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
+        <version>2.1.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
