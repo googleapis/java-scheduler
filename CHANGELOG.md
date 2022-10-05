@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.13](https://github.com/googleapis/java-scheduler/compare/v2.3.12...v2.3.13) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([9ed31a6](https://github.com/googleapis/java-scheduler/commit/9ed31a6a5f0aa71bb9df7b7c2c97ffa0839f62ad))
+
 ## [2.3.12](https://github.com/googleapis/java-scheduler/compare/v2.3.11...v2.3.12) (2022-10-03)
 
 
